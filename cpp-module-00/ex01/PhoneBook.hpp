@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/02 14:59:18 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/08/26 15:03:09 by jinhchoi         ###   ########.fr       */
+/*   Created: 2023/08/26 12:20:06 by jinhchoi          #+#    #+#             */
+/*   Updated: 2023/08/26 12:48:32 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
+#ifndef PHONEBOOK_H
+# define PHONEBOOK_H
 
-Contact::Contact(std::string first_name, std::string last_name, std::string nickname, std::string phone_number, std::string darkest_secret)
-{
-	first_name_ = first_name;
-	last_name_ = last_name;
-	nickname_ = nickname;
-	phone_number_ = phone_number;
-	darkest_secret_ = darkest_secret;
-}
+# include "Contact.hpp"
 
+class PhoneBook {
+public:
+	PhoneBook();
+	void	add_contact();
+	void	search_contact();
+private:
+	int	idx;
+	Contact	contacts[8];
+};
+
+#endif
