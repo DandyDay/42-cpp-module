@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= phonebook
+NAME	= globalbanksters
 
 # **************************************************************************** #
 #                                                                              #
@@ -28,7 +28,7 @@ RM			= rm -rf
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		= src/Contact.cpp src/PhoneBook.cpp src/main.cpp
+SRCS		= Account.cpp tests.cpp
 OBJS 		= ${SRCS:.cpp=.o}
 INCLUDE		= ./include
 
