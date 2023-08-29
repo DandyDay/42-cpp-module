@@ -28,7 +28,7 @@ RM			= rm -rf
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		= Account.cpp tests.cpp
+SRCS		= src/Account.cpp src/tests.cpp
 OBJS 		= ${SRCS:.cpp=.o}
 INCLUDE		= ./include
 

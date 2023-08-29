@@ -11,7 +11,6 @@
 # **************************************************************************** #
 
 NAME	= megaphone
-PHILO	= 📣Megaphone📣
 
 # **************************************************************************** #
 #                                                                              #
@@ -70,8 +69,7 @@ $(NAME) : $(OBJS)
 	@printf "\rCompiling source files... "
 	@printf "%.$(shell printf "%d" 64)s" $(bar_done)
 	@printf "%7.2f%%\n" 100
-	@printf "🍽️  Now you simulate ${bold}$(PHILO).${end}"
-	@printf " (%s)\n" $(version)
+	@printf "${bold}Compile Completed.${end}\n"
 
 %.o : %.cpp
 	@$(eval cnt=$(shell printf $$(($(cnt)+1))))
@@ -89,12 +87,12 @@ $(NAME) : $(OBJS)
 clean :
 	@$(RM) $(OBJS)
 	@$(RM) $(B_OBJS)
-	@printf "make clean ${bold}$(PHILO).${end}\n"
+	@printf "make clean\n"
 
 fclean :
 	@make clean
 	@$(RM) $(NAME)
-	@printf "make fclean ${bold}$(PHILO).${end}\n"
+	@printf "make fclean\n"
 
 re :
 	@make fclean

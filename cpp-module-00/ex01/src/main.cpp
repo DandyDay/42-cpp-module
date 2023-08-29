@@ -6,10 +6,11 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 10:58:00 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/08/27 15:48:43 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/08/29 17:26:39 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <cstdio>
 #include <iostream>
 #include <iomanip>
 #include "PhoneBook.hpp"
@@ -21,12 +22,13 @@ int	main(void)
 
 	while (true)
 	{
-		std::cout << "command: ";
+		std::cout << "command(ADD, SEARCH, EXIT): ";
 		getline(std::cin, command);
 		if (std::cin.eof())
 		{
 			std::cout << "EOF detected" << std::endl;
-			return (0);
+			clearerr(stdin);
+			std::cin.clear();
 		}
 		else if (command == "ADD")
 		{
