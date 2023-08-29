@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 14:59:00 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/08/29 17:36:26 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/08/29 17:43:48 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,10 +91,16 @@ void	PhoneBook::search_contact()
 
 std::string	PhoneBook::get_fitted_string(std::string original)
 {
-	if (original.length() > 10)
-		return (original.substr(0, 9) + ".");
+	std::string str;
+
+	str = original;
+	for (int i = 0; i < str.length(); i++)
+		if (str[i] == '\t')
+			str[i] = ' ';
+	if (str.length() > 10)
+		return (str.substr(0, 9) + ".");
 	else
-		return (original);
+		return (str);
 }
 
 bool PhoneBook::check_stdin_err()
