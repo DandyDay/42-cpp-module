@@ -15,15 +15,42 @@
 
 #include <iostream>
 
-void Sed::OpenFile(std::string file_name)
+Sed::Sed()
 {
-	fin_ = std::ifstream(file_name);
-	if (fin_.is_open())
-	{
+	file_content_ = "";
+}
 
-	}
+Sed::~Sed()
+{
+	if (fin_.is_open())
+		fin_.close();
+}
+
+bool Sed::ReadFile(std::string file_name)
+{
+	std::string temp;
+
+	file_name_ = file_name;
+	fin_ = std::ifstream(file_name);
+	if (!fin_.is_open())
+		return false;
 	else
 	{
-		std::cout << "file not found" << std::endl;
+		while (std::getline(fin_, temp))
+			file_content_ += temp;
 	}
+	return true;
+}
+
+void Sed::ReplaceWords(std::string s1, std::string s2)
+{
+	if (s1.length() == 0)
+		return ;
+	if (s2.length() == 0)
+		return ;
+}
+
+void Sed::WriteFile()
+{
+	std::cout << file_content_ << std::endl;
 }

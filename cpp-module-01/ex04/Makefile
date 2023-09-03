@@ -6,7 +6,7 @@
 #    By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/03 14:15:39 by jinhchoi          #+#    #+#              #
-#    Updated: 2023/09/03 18:56:56 by jinhchoi         ###   ########.fr        #
+#    Updated: 2023/09/03 20:08:20 by jinhchoi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 INCLUDE = ./include
-SRCS = main.cpp
+SRCS = main.cpp Sed.cpp
 OBJS = ${SRCS:.cpp=.o}
 
 all : $(NAME)

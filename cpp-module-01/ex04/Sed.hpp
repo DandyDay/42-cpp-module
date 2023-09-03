@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 19:37:38 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/09/03 19:40:06 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/09/03 20:04:56 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,15 @@
 class Sed
 {
 public:
-	void OpenFile(std::string file_name);
+	Sed();
+	~Sed();
+	bool ReadFile(std::string file_name);
+	void ReplaceWords(std::string s1, std::string s2);
+	void WriteFile();
 private:
 	std::ifstream fin_;
+	std::string file_name_;
+	std::string file_content_;
 };
 
 #endif
