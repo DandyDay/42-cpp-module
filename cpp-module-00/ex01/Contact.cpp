@@ -6,12 +6,13 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 14:59:18 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/08/27 13:42:38 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/09/03 19:41:41 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Contact.hpp"
+
+#include <iostream>
 
 Contact::Contact()
 {

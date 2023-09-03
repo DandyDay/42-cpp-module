@@ -6,14 +6,15 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 10:50:31 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/08/29 16:50:19 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/09/03 19:42:08 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "Account.hpp"
 
 #include <ctime>
 #include <iomanip>
 #include <iostream>
-#include "Account.hpp"
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;

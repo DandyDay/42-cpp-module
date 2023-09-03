@@ -6,7 +6,7 @@
 #    By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/03 14:15:39 by jinhchoi          #+#    #+#              #
-#    Updated: 2023/09/03 16:38:11 by jinhchoi         ###   ########.fr        #
+#    Updated: 2023/09/03 19:23:52 by jinhchoi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@ NAME = violence
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-INCLUDE = ./include
-SRCS = src/main.cpp src/Weapon.cpp src/HumanA.cpp src/HumanB.cpp
+INCLUDE = .
+SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 OBJS = ${SRCS:.cpp=.o}
 
 all : $(NAME)

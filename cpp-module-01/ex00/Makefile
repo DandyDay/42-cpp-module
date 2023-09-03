@@ -6,7 +6,7 @@
 #    By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/03 14:15:39 by jinhchoi          #+#    #+#              #
-#    Updated: 2023/09/03 14:45:16 by jinhchoi         ###   ########.fr        #
+#    Updated: 2023/09/03 19:23:14 by jinhchoi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@ NAME = zombie
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-INCLUDE = ./include
-SRCS = src/main.cpp src/newZombie.cpp src/randomChump.cpp src/Zombie.cpp
+INCLUDE = .
+SRCS = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
 OBJS = ${SRCS:.cpp=.o}
 
 all : $(NAME)

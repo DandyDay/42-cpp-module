@@ -6,17 +6,17 @@
 #    By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/03 14:15:39 by jinhchoi          #+#    #+#              #
-#    Updated: 2023/09/03 19:22:54 by jinhchoi         ###   ########.fr        #
+#    Updated: 2023/09/03 18:56:56 by jinhchoi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = globalbanksters
+NAME = sed
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-INCLUDE = .
-SRCS = main.cpp Account.cpp
+INCLUDE = ./include
+SRCS = main.cpp
 OBJS = ${SRCS:.cpp=.o}
 
 all : $(NAME)

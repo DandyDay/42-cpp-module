@@ -6,7 +6,7 @@
 #    By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/03 14:15:39 by jinhchoi          #+#    #+#              #
-#    Updated: 2023/09/03 14:44:32 by jinhchoi         ###   ########.fr        #
+#    Updated: 2023/09/03 19:19:54 by jinhchoi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@ NAME = phonebook
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-INCLUDE = ./include
-SRCS = src/main.cpp src/Contact.cpp src/PhoneBook.cpp
+INCLUDE = .
+SRCS = main.cpp Contact.cpp PhoneBook.cpp
 OBJS = ${SRCS:.cpp=.o}
 
 all : $(NAME)

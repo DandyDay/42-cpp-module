@@ -6,13 +6,14 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 14:59:00 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/08/29 17:43:48 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/09/03 19:41:59 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "PhoneBook.hpp"
+
 #include <iostream>
 #include <iomanip>
-#include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook() : idx_(0), count_(0)
 {

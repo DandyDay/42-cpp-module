@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 12:20:06 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/08/29 16:52:11 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/09/03 19:20:23 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ public:
 	PhoneBook();
 	void		add_contact();
 	void		search_contact();
-	std::string	get_string();
+
 private:
 	Contact contacts_[8];
 	std::string get_fitted_string(std::string original);

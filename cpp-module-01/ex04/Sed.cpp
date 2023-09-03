@@ -1,34 +1,29 @@
+#include "Sed.hpp"
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Sed.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 17:57:30 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/09/01 21:47:41 by jinhchoi         ###   ########.fr       */
+/*   Created: 2023/09/03 19:39:24 by jinhchoi          #+#    #+#             */
+/*   Updated: 2023/09/03 19:39:25 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Sed.hpp"
+
 #include <iostream>
-#include "Zombie.hpp"
 
-Zombie::Zombie()
+void Sed::OpenFile(std::string file_name)
 {
+	fin_ = std::ifstream(file_name);
+	if (fin_.is_open())
+	{
 
-}
-
-Zombie::Zombie(std::string name) : name_(name)
-{
-
-}
-
-Zombie::~Zombie()
-{
-	std::cout << name_ << " Destroyed" << std::endl;
-}
-
-void Zombie::announce(void)
-{
-	std::cout << name_ << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	}
+	else
+	{
+		std::cout << "file not found" << std::endl;
+	}
 }
