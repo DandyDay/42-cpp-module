@@ -6,17 +6,17 @@
 #    By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/03 14:15:39 by jinhchoi          #+#    #+#              #
-#    Updated: 2023/09/03 14:46:33 by jinhchoi         ###   ########.fr        #
+#    Updated: 2023/09/03 16:38:11 by jinhchoi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = violence
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 INCLUDE = ./include
-SRCS = src/main.cpp src/Contact.cpp src/PhoneBook.cpp
+SRCS = src/main.cpp src/Weapon.cpp src/HumanA.cpp src/HumanB.cpp
 OBJS = ${SRCS:.cpp=.o}
 
 all : $(NAME)
