@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/03 17:31:48 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/09/03 23:52:34 by jinhchoi         ###   ########.fr       */
+/*   Created: 2023/09/04 08:45:51 by jinhchoi          #+#    #+#             */
+/*   Updated: 2023/09/04 13:32:06 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Sed.hpp"
+#ifndef HARL_HPP
+#define HARL_HPP
 
-int main(int argc, char *argv[])
+#include <string>
+
+class Harl
 {
-	Sed sed;
-	if (argc != 4)
-		return EXIT_FAILURE;
-	if (!sed.ReadFile(argv[1]))
-		return EXIT_FAILURE;
-	sed.ReplaceWords(argv[2], argv[3]);
-	sed.WriteFile();
-	return 0;
-}
+public:
+	Harl(/* args */);
+	~Harl();
+	void complain(std::string level);
+private:
+	void debug(void);
+	void info(void);
+	void warning(void);
+	void error(void);
+
+	void (Harl::*fp[4])();
+};
+
+#endif

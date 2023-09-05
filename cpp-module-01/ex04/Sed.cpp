@@ -37,20 +37,38 @@ bool Sed::ReadFile(std::string file_name)
 	else
 	{
 		while (std::getline(fin_, temp))
+		{
+			if (file_content_.length() != 0)
+				file_content_ += "\n";
 			file_content_ += temp;
+		}
 	}
 	return true;
 }
 
 void Sed::ReplaceWords(std::string s1, std::string s2)
 {
+	std::size_t pos = 0;
+
 	if (s1.length() == 0)
 		return ;
-	if (s2.length() == 0)
-		return ;
+	while ((pos = file_content_.find(s1, pos + s2.length())) != std::string::npos)
+	{
+		file_content_ = file_content_.substr(0, pos) + s2 + file_content_.substr(pos + s1.length());
+	}
 }
 
 void Sed::WriteFile()
 {
-	std::cout << file_content_ << std::endl;
+	std::ofstream fout(file_name_ + ".replace");
+
+	if (fout.is_open())
+	{
+		fout << file_content_;
+	}
+	else
+	{
+		std::cout << "file open error" << std::endl;
+		std::exit(1);
+	}
 }
