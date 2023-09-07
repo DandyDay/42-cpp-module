@@ -16,7 +16,7 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 INCLUDE = .
-SRCS = main.cpp Account.cpp
+SRCS = tests.cpp Account.cpp
 OBJS = ${SRCS:.cpp=.o}
 
 all : $(NAME)
