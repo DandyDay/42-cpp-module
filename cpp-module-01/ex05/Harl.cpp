@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 08:45:56 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/09/08 12:51:07 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/09/13 19:30:42 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,15 @@
 
 Harl::Harl()
 {
-	fp[0] = &Harl::debug;
-	fp[1] = &Harl::info;
-	fp[2] = &Harl::warning;
-	fp[3] = &Harl::error;
+	fp[570] = &Harl::debug;
+	fp[396] = &Harl::info;
+	fp[337] = &Harl::warning;
+	fp[5] = &Harl::error;
+
+	commands_[570] = "DEBUG";
+	commands_[396] = "INFO";
+	commands_[337] = "WARNING";
+	commands_[5] = "ERROR";
 }
 
 Harl::~Harl()
@@ -30,24 +35,17 @@ Harl::~Harl()
 
 void Harl::complain(std::string level)
 {
-	switch (Harl::djb2_hash(level.c_str()))
-	{
-	case 217349260:
-		Harl::debug();
-		break;
-	case 2089184337:
-		Harl::info();
-		break;
-	case 3395384219:
-		Harl::warning();
-		break;
-	case 219019599:
-		Harl::error();
-		break;
-	
-	default:
-		break;
-	}
+	unsigned int string_hash = Harl::djb2_hash(level.c_str());
+	if (level.compare(commands_[string_hash]) == 0)
+		(this->*(fp[string_hash]))();
+}
+
+void Harl::complain(char *level)
+{
+	if (level == nullptr)
+		return ;
+	else
+		Harl::complain(std::string(level));
 }
 
 void Harl::debug(void)
@@ -78,5 +76,5 @@ unsigned int Harl::djb2_hash(const char* str) {
         hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
     }
 
-    return hash;
+    return hash % 1009;
 }

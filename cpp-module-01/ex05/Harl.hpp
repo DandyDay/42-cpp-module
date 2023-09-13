@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 08:45:51 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/09/08 13:46:03 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/09/13 19:33:32 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ class Harl
 public:
 	Harl();
 	~Harl();
+	void complain(char *level);
 	void complain(std::string level);
+
 private:
 	void debug(void);
 	void info(void);
@@ -28,7 +30,8 @@ private:
 	void error(void);
 	unsigned int djb2_hash(const char* str);
 
-	void (Harl::*fp[4])();
+	void (Harl::*fp[1009])();
+	std::string commands_[1009];
 };
 
 #endif

@@ -6,14 +6,14 @@
 #    By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/03 14:15:39 by jinhchoi          #+#    #+#              #
-#    Updated: 2023/09/04 12:46:32 by jinhchoi         ###   ########.fr        #
+#    Updated: 2023/09/13 19:26:09 by jinhchoi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = harl
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g
 
 INCLUDE = .
 SRCS = main.cpp Harl.cpp
