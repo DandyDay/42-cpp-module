@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 08:45:51 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/09/13 19:33:32 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/09/13 19:36:45 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Harl
 public:
 	Harl();
 	~Harl();
-	void complain(char *level);
+	void complain(const char *level);
 	void complain(std::string level);
 
 private:
