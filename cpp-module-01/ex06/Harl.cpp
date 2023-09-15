@@ -37,10 +37,13 @@ void Harl::complain(std::string level)
 		{
 			case 570:
 				Harl::debug();
+				__attribute__((fallthrough));
 			case 396:
 				Harl::info();
+				__attribute__((fallthrough));
 			case 337:
 				Harl::warning();
+				__attribute__((fallthrough));
 			case 5:
 				Harl::error();
 				break;

@@ -15,7 +15,7 @@
 
 HumanB::HumanB(std::string name) : name_(name)
 {
-	weapon_ = nullptr;
+	weapon_ = NULL;
 }
 
 HumanB::HumanB()
@@ -30,7 +30,7 @@ HumanB::~HumanB()
 
 void HumanB::attack()
 {
-	if (weapon_ == nullptr)
+	if (weapon_ == NULL)
 		std::cout << name_ << " attacks with their hand" << std::endl;
 	else
 		std::cout << name_ << " attacks with their " << weapon_->getType() << std::endl;
