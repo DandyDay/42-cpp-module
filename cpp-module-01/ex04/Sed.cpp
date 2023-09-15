@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 19:39:24 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/09/15 03:50:50 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/09/15 15:56:04 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,10 @@ void Sed::ReplaceWords(std::string s1, std::string s2)
 
 	if (s1.length() == 0)
 		return ;
-	while ((pos = file_content_.find(s1, pos + s2.length())) != std::string::npos)
+	while ((pos = file_content_.find(s1, pos)) != std::string::npos)
 	{
 		file_content_ = file_content_.substr(0, pos) + s2 + file_content_.substr(pos + s1.length());
+		pos += + s2.length();
 	}
 }
 
