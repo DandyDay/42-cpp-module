@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 08:45:56 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/09/13 23:54:13 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/09/15 04:11:06 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ void Harl::complain(std::string level)
 		{
 			case 570:
 				Harl::debug();
-				__attribute__((fallthrough));
+				// fallthrough
 			case 396:
 				Harl::info();
-				__attribute__((fallthrough));
+				// fallthrough
 			case 337:
 				Harl::warning();
-				__attribute__((fallthrough));
+				// fallthrough
 			case 5:
 				Harl::error();
 				break;
