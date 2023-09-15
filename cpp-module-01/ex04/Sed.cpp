@@ -1,4 +1,3 @@
-#include "Sed.hpp"
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -7,13 +6,14 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 19:39:24 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/09/03 19:39:25 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/09/15 03:50:50 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sed.hpp"
 
 #include <iostream>
+#include <cstdlib>
 
 Sed::Sed()
 {
@@ -22,8 +22,6 @@ Sed::Sed()
 
 Sed::~Sed()
 {
-	if (fin_.is_open())
-		fin_.close();
 }
 
 bool Sed::ReadFile(std::string file_name)
@@ -31,12 +29,12 @@ bool Sed::ReadFile(std::string file_name)
 	std::string temp;
 
 	file_name_ = file_name;
-	fin_ = std::ifstream(file_name);
-	if (!fin_.is_open())
+	std::ifstream fin(file_name_.c_str());
+	if (!fin.is_open())
 		return false;
 	else
 	{
-		while (std::getline(fin_, temp))
+		while (std::getline(fin, temp))
 		{
 			if (file_content_.length() != 0)
 				file_content_ += "\n";
@@ -60,7 +58,7 @@ void Sed::ReplaceWords(std::string s1, std::string s2)
 
 void Sed::WriteFile()
 {
-	std::ofstream fout(file_name_ + ".replace");
+	std::ofstream fout((file_name_ + ".replace").c_str());
 
 	if (fout.is_open())
 	{
@@ -69,6 +67,6 @@ void Sed::WriteFile()
 	else
 	{
 		std::cout << "file open error" << std::endl;
-		std::exit(1);
+		exit(1);
 	}
 }

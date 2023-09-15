@@ -6,7 +6,7 @@
 #    By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/03 14:15:39 by jinhchoi          #+#    #+#              #
-#    Updated: 2023/09/03 20:08:20 by jinhchoi         ###   ########.fr        #
+#    Updated: 2023/09/15 03:51:32 by jinhchoi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ $(NAME) : $(OBJS)
 %.o : %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@ -I $(INCLUDE)
 
-clean : 
+clean :
 	@$(RM) $(OBJS)
 
 fclean :

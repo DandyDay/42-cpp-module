@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 17:31:48 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/09/03 23:52:34 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/09/15 03:45:57 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ int main(int argc, char *argv[])
 {
 	Sed sed;
 	if (argc != 4)
-		return EXIT_FAILURE;
+		return 1;
 	if (!sed.ReadFile(argv[1]))
-		return EXIT_FAILURE;
+		return 1;
 	sed.ReplaceWords(argv[2], argv[3]);
 	sed.WriteFile();
 	return 0;
