@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 15:51:46 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/09/03 17:05:05 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/09/15 03:59:48 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ public:
 	~HumanA();
 	void attack();
 private:
+	static Weapon defaultWeapon;
+
 	Weapon& weapon_;
 	std::string name_;
 };

@@ -6,12 +6,19 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 15:51:19 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/09/03 17:29:25 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/09/15 04:02:42 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "HumanA.hpp"
+
+Weapon HumanA::defaultWeapon = Weapon();
+
+HumanA::HumanA() : weapon_(HumanA::defaultWeapon)
+{
+
+}
 
 HumanA::HumanA(std::string name, Weapon& weapon) : weapon_(weapon), name_(name)
 {

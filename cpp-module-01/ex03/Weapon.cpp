@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 14:52:31 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/09/03 17:29:04 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/09/15 03:57:11 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 Weapon::Weapon()
 {
-
+	type_ = "";
 }
 
 Weapon::~Weapon()
@@ -25,7 +25,7 @@ Weapon::~Weapon()
 
 Weapon::Weapon(std::string type) : type_(type)
 {
-	
+
 }
 
 const std::string &Weapon::getType()
