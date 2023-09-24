@@ -6,27 +6,22 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 16:53:19 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/09/23 17:34:01 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/09/24 14:22:02 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-#include "Fixed.hpp"
+#include "Point.hpp"
+
+bool bsp(Point const a, Point const b, Point const c, Point const point);
 
 int main( void ) {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	Point p1(0, 0), p2(1, 0), p3(0, 1);
+	Point pi(0.5, 0.3), po(0.5, 0.5);
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-
-	std::cout << b << std::endl;
-
-	std::cout << Fixed::max(a, b) << std::endl;
+	std::cout << bsp(p1, p2, p3, pi) << std::endl;
+	std::cout << bsp(p1, p2, p3, po) << std::endl;
 
 	return 0;
 }
