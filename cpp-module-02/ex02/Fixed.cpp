@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 20:39:25 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/09/24 10:01:38 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/09/29 23:11:49 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ Fixed::Fixed(const Fixed &other)
 
 Fixed &Fixed::operator=(const Fixed &other)
 {
-	this->raw_bits_ = other.getRawBits();
+	if (this != &other)
+		this->raw_bits_ = other.getRawBits();
 	return *this;
 }
 
