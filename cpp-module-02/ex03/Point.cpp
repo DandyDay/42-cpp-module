@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 17:35:47 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/09/23 18:08:22 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/10/01 16:39:20 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 Point::Point()
 {
-
 }
 
 Point::Point(float x, float y) : x_(x), y_(y)
 {
-
 }
 
 Point::Point(const Point &other)
@@ -38,7 +36,6 @@ Point &Point::operator=(const Point &other)
 
 Point::~Point()
 {
-
 }
 
 Point Point::operator-(const Point &other) const

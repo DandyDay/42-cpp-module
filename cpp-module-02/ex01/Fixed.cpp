@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 20:39:25 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/09/29 23:11:40 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/10/01 16:39:12 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,13 +67,12 @@ void Fixed::setRawBits(int const raw)
 	raw_bits_ = raw;
 }
 
-std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
+std::ostream &operator<<(std::ostream &os, const Fixed &fixed)
 {
 	os << fixed.toFloat();
 
 	return os;
 }
-
 
 float Fixed::toFloat(void) const
 {

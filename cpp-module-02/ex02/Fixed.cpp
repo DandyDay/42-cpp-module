@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 20:39:25 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/09/29 23:11:49 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/10/01 16:38:51 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ const int Fixed::fractional_bits_ = 8;
 
 Fixed::Fixed() : raw_bits_(0)
 {
-
 }
 
 Fixed::Fixed(const int num)
@@ -46,41 +45,39 @@ Fixed &Fixed::operator=(const Fixed &other)
 
 Fixed::~Fixed()
 {
-
 }
 
-bool Fixed::operator==(const Fixed& other) const
+bool Fixed::operator==(const Fixed &other) const
 {
 	return (this->raw_bits_ == other.raw_bits_);
 }
 
-bool Fixed::operator!=(const Fixed& other) const
+bool Fixed::operator!=(const Fixed &other) const
 {
 	return (this->raw_bits_ != other.raw_bits_);
 }
 
-
-bool Fixed::operator<(const Fixed& other) const
+bool Fixed::operator<(const Fixed &other) const
 {
 	return (this->raw_bits_ < other.raw_bits_);
 }
 
-bool Fixed::operator<=(const Fixed& other) const
+bool Fixed::operator<=(const Fixed &other) const
 {
 	return (this->raw_bits_ <= other.raw_bits_);
 }
 
-bool Fixed::operator>(const Fixed& other) const
+bool Fixed::operator>(const Fixed &other) const
 {
 	return (this->raw_bits_ > other.raw_bits_);
 }
 
-bool Fixed::operator>=(const Fixed& other) const
+bool Fixed::operator>=(const Fixed &other) const
 {
 	return (this->raw_bits_ >= other.raw_bits_);
 }
 
-Fixed Fixed::operator+(const Fixed& other) const
+Fixed Fixed::operator+(const Fixed &other) const
 {
 	Fixed result;
 	result.raw_bits_ = this->raw_bits_ + other.raw_bits_;
@@ -88,7 +85,7 @@ Fixed Fixed::operator+(const Fixed& other) const
 	return result;
 }
 
-Fixed Fixed::operator-(const Fixed& other) const
+Fixed Fixed::operator-(const Fixed &other) const
 {
 	Fixed result;
 	result.raw_bits_ = this->raw_bits_ - other.raw_bits_;
@@ -96,7 +93,7 @@ Fixed Fixed::operator-(const Fixed& other) const
 	return result;
 }
 
-Fixed Fixed::operator*(const Fixed& other) const
+Fixed Fixed::operator*(const Fixed &other) const
 {
 	Fixed result;
 	result.raw_bits_ = this->raw_bits_ * other.raw_bits_ >> 8;
@@ -104,15 +101,15 @@ Fixed Fixed::operator*(const Fixed& other) const
 	return result;
 }
 
-Fixed Fixed::operator/(const Fixed& other) const
+Fixed Fixed::operator/(const Fixed &other) const
 {
 	Fixed result;
-	result.raw_bits_ = this->raw_bits_ / other.raw_bits_ << 8;
+	result.raw_bits_ = (this->raw_bits_ << 8) / other.raw_bits_;
 
 	return result;
 }
 
-Fixed& Fixed::operator++()
+Fixed &Fixed::operator++()
 {
 	raw_bits_++;
 	return *this;
@@ -123,7 +120,7 @@ Fixed Fixed::operator++(int)
 	++(*this);
 	return temp;
 }
-Fixed& Fixed::operator--()
+Fixed &Fixed::operator--()
 {
 	raw_bits_--;
 	return *this;
@@ -135,11 +132,11 @@ Fixed Fixed::operator--(int)
 	return temp;
 }
 
-Fixed Fixed::max(const Fixed& a, const Fixed& b)
+Fixed Fixed::max(const Fixed &a, const Fixed &b)
 {
 	return a.raw_bits_ > b.raw_bits_ ? a : b;
 }
-Fixed Fixed::min(const Fixed& a, const Fixed& b)
+Fixed Fixed::min(const Fixed &a, const Fixed &b)
 {
 	return a.raw_bits_ < b.raw_bits_ ? a : b;
 }
@@ -154,13 +151,12 @@ void Fixed::setRawBits(int const raw)
 	raw_bits_ = raw;
 }
 
-std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
+std::ostream &operator<<(std::ostream &os, const Fixed &fixed)
 {
 	os << fixed.toFloat();
 
 	return os;
 }
-
 
 float Fixed::toFloat(void) const
 {
