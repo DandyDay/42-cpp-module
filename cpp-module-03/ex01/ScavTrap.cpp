@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 13:15:02 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/10/01 00:29:53 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/10/01 11:04:24 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,25 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	attack_damage_ = 20;
 }
 
+ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other.name_)
+{
+	hit_points_ = other.hit_points_;
+	energy_points_ = other.energy_points_;
+	attack_damage_ = other.attack_damage_;
+}
+
+ScavTrap &ScavTrap::operator=(const ScavTrap &other)
+{
+	if (this != &other)
+	{
+		name_ = other.name_;
+		hit_points_ = other.hit_points_;
+		energy_points_ = other.energy_points_;
+		attack_damage_ = other.attack_damage_;
+	}
+	return *this;
+}
+
 ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap " << name_ << " destructor called" << std::endl;
@@ -33,7 +52,8 @@ void ScavTrap::attack(const std::string& target)
 	{
 		--energy_points_;
 		std::cout << "ScavTrap " << name_ << " attacks " << target << " causing " <<
-					 attack_damage_ << " points of damage!" << std::endl;
+					 attack_damage_ << " points of damage!" <<
+					 "(energy_point: " << energy_points_ << ")" << std::endl;
 	}
 }
 

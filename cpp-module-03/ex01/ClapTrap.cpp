@@ -6,22 +6,13 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 23:02:18 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/09/30 13:21:02 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/10/01 11:03:49 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 #include <iostream>
-
-// ClapTrap::ClapTrap()
-// {
-// 	name_ = "NO_NAME";
-// 	std::cout << "ClapTrap " << name_ << " constructor called" << std::endl;
-// 	hit_points_ = 10;
-// 	energy_points_ = 10;
-// 	attack_damage_ = 0;
-// }
 
 ClapTrap::ClapTrap(std::string name) : name_(name)
 {
@@ -62,7 +53,8 @@ void ClapTrap::attack(const std::string &target)
 	{
 		--energy_points_;
 		std::cout << "ClapTrap " << name_ << " attacks " << target << " causing " <<
-					 attack_damage_ << " points of damage!" << std::endl;
+					 attack_damage_ << " points of damage! " <<
+					 "(energy_point: " << energy_points_ << ")" << std::endl;
 	}
 }
 
@@ -72,7 +64,8 @@ void ClapTrap::takeDamage(unsigned int amount)
 		hit_points_ = 0;
 	else
 		hit_points_ -= amount;
-	std::cout << "ClapTrap " << name_ << " takes " << amount << " points of damage! " << hit_points_ << " remains." << std::endl;
+	std::cout << "ClapTrap " << name_ << " takes " << amount << " points of damage! " <<
+				hit_points_ << " remains. (energy_point: " << energy_points_ << ")" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
@@ -81,6 +74,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 	{
 		--energy_points_;
 		hit_points_ += amount;
-	std::cout << "ClapTrap " << name_ << " is repaired " << amount << " points of damage! " << hit_points_ << " remains." << std::endl;
+	std::cout << "ClapTrap " << name_ << " is repaired " << amount << " points of damage! " <<
+				hit_points_ << " remains. (energy_point: " << energy_points_ << ")" << std::endl;
 	}
 }
