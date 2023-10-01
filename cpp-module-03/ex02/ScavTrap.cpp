@@ -6,13 +6,20 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 13:15:02 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/10/01 11:04:24 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/10/01 11:25:25 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 #include <iostream>
+
+ScavTrap::ScavTrap()
+{
+	hit_points_ = 100;
+	energy_points_ = 50;
+	attack_damage_ = 20;
+}
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
