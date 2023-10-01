@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 20:39:25 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/10/01 16:34:18 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/10/01 16:59:15 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,17 +114,20 @@ Fixed &Fixed::operator++()
 	raw_bits_++;
 	return *this;
 }
+
 Fixed Fixed::operator++(int)
 {
 	Fixed temp(*this);
 	++(*this);
 	return temp;
 }
+
 Fixed &Fixed::operator--()
 {
 	raw_bits_--;
 	return *this;
 }
+
 Fixed Fixed::operator--(int)
 {
 	Fixed temp(*this);
@@ -136,6 +139,7 @@ Fixed Fixed::max(const Fixed &a, const Fixed &b)
 {
 	return a.raw_bits_ > b.raw_bits_ ? a : b;
 }
+
 Fixed Fixed::min(const Fixed &a, const Fixed &b)
 {
 	return a.raw_bits_ < b.raw_bits_ ? a : b;
