@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 20:39:25 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/10/01 16:39:12 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/10/01 16:33:24 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ Fixed::Fixed() : raw_bits_(0)
 Fixed::Fixed(const int num)
 {
 	std::cout << "Int constructor called" << std::endl;
-	raw_bits_ = num << 8;
+	raw_bits_ = num << fractional_bits_;
 }
 
 Fixed::Fixed(const float num)
 {
 	std::cout << "Float constructor called" << std::endl;
 
-	raw_bits_ = roundf(num * 256);
+	raw_bits_ = roundf(num * (1 << fractional_bits_));
 }
 
 Fixed::Fixed(const Fixed &other)
@@ -76,11 +76,11 @@ std::ostream &operator<<(std::ostream &os, const Fixed &fixed)
 
 float Fixed::toFloat(void) const
 {
-	float num = raw_bits_ / 256.0;
+	float num = (float) raw_bits_ / (1 << fractional_bits_);
 	return num;
 }
 
 int Fixed::toInt(void) const
 {
-	return raw_bits_ >> 8;
+	return raw_bits_ >> fractional_bits_;
 }
