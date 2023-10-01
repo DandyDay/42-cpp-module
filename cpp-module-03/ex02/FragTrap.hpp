@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 13:14:13 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/10/01 11:25:53 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/10/01 12:04:54 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,12 @@ class FragTrap : public ClapTrap
 public:
 	FragTrap();
 	FragTrap(std::string name);
-	FragTrap(const FragTrap& other);
-	FragTrap& operator=(const FragTrap& other);
+	FragTrap(const FragTrap &other);
+	FragTrap &operator=(const FragTrap &other);
 	~FragTrap();
 
 	void highFivesGuys(void);
+
 private:
 	/* data */
 };

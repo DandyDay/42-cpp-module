@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 23:02:28 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/10/01 11:22:43 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/10/01 12:04:58 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,19 @@ class ClapTrap
 public:
 	ClapTrap();
 	ClapTrap(std::string name);
-	ClapTrap(const ClapTrap& other);
-	ClapTrap& operator=(const ClapTrap& other);
+	ClapTrap(const ClapTrap &other);
+	ClapTrap &operator=(const ClapTrap &other);
 	~ClapTrap();
 
-	void attack(const std::string& target);
+	void attack(const std::string &target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
+
 protected:
 	std::string name_;
 	unsigned int hit_points_;
 	unsigned int energy_points_;
 	unsigned int attack_damage_;
 };
-
-
-
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 13:15:02 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/10/01 11:26:11 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/10/01 12:04:52 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,6 @@ FragTrap::~FragTrap()
 
 void FragTrap::highFivesGuys(void)
 {
-	std::cout << "FragTrap " << name_ << " requests for a HighFive" << std::endl;
+	std::cout << "FragTrap " << name_ << " requests for a HighFive"
+			  << std::endl;
 }
-
