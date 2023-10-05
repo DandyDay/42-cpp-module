@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/05 13:52:07 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/10/05 16:47:50 by jinhchoi         ###   ########.fr       */
+/*   Created: 2023/10/05 17:40:52 by jinhchoi          #+#    #+#             */
+/*   Updated: 2023/10/05 18:49:14 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-#define AMATERIA_HPP
+#ifndef CHARACTER_HPP
+#define CHARACTER_HPP
 
 #include "ICharacter.hpp"
 #include <string>
 
-class AMateria
+class Character : public ICharacter
 {
-protected:
-	std::string type_;
-
 public:
-	AMateria();
-	AMateria(std::string const &type);
-	AMateria(const AMateria &other);
-	AMateria &operator=(const AMateria &other);
-	virtual ~AMateria();
+	Character();
+	Character(std::string name);
+	Character(const Character &other);
+	Character &operator=(const Character &other);
+	~Character();
 
-	std::string const &getType() const;
+	std::string const &getName() const;
+	void equip(AMateria *m);
+	void unequip(int idx);
+	void use(int idx, ICharacter &target);
 
-	virtual AMateria *clone() const = 0;
-	virtual void use(ICharacter &target);
+private:
+	std::string name_;
+	AMateria *materia_[4];
 };
 
 #endif
