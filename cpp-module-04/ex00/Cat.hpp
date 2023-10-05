@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 14:08:40 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/10/01 14:38:20 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/10/05 00:08:48 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,6 @@ public:
 	virtual ~Cat();
 
 	void makeSound() const;
-
-private:
-	/* data */
 };
 
 #endif
