@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 13:15:02 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/10/01 12:14:07 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/10/09 18:49:51 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ const unsigned int ScavTrap::kAttackDamage = 20;
 
 ScavTrap::ScavTrap()
 {
+	std::cout << "ScavTrap default constructor called" << std::endl;
 	hit_points_ = kHitPoints;
 	energy_points_ = kEnergyPoints;
 	attack_damage_ = kAttackDamage;
@@ -35,6 +36,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 
 ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other.name_)
 {
+	std::cout << "ScavTrap " << name_ << " constructor called" << std::endl;
 	hit_points_ = other.hit_points_;
 	energy_points_ = other.energy_points_;
 	attack_damage_ = other.attack_damage_;

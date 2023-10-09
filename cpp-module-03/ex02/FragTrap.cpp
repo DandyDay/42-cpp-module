@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 13:15:02 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/10/01 12:04:52 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/10/09 18:50:02 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 FragTrap::FragTrap()
 {
+	std::cout << "FragTrap default constructor called" << std::endl;
 	hit_points_ = 100;
 	energy_points_ = 100;
 	attack_damage_ = 30;
@@ -31,6 +32,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 
 FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other.name_)
 {
+	std::cout << "FragTrap " << name_ << " constructor called" << std::endl;
 	hit_points_ = other.hit_points_;
 	energy_points_ = other.energy_points_;
 	attack_damage_ = other.attack_damage_;

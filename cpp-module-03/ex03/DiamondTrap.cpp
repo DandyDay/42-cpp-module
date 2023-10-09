@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 11:16:08 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/10/01 03:26:21 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/10/09 18:51:21 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 
 DiamondTrap::DiamondTrap()
 {
+	std::cout << "DiamondTrap default constructor called"
+			  << std::endl;
 	hit_points_ = FragTrap::kHitPoints;
 	energy_points_ = ScavTrap::kEnergyPoints;
 	attack_damage_ = FragTrap::kAttackDamage;
@@ -34,6 +36,8 @@ DiamondTrap::DiamondTrap(std::string name)
 
 DiamondTrap::DiamondTrap(const DiamondTrap &other) : ClapTrap(other.name_), ScavTrap(other.name_), FragTrap(other.name_)
 {
+	std::cout << "DiamondTrap " << ScavTrap::name_ << " constructor called"
+			  << std::endl;
 	ClapTrap::name_ = other.ClapTrap::name_;
 	hit_points_ = other.hit_points_;
 	energy_points_ = other.energy_points_;
@@ -55,6 +59,8 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other)
 
 DiamondTrap::~DiamondTrap()
 {
+	std::cout << "DiamondTrap " << ScavTrap::name_ << " destructor called"
+			  << std::endl;
 }
 
 void DiamondTrap::whoAmI()
