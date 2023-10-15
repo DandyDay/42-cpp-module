@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 23:02:18 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/10/01 12:04:50 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/10/15 14:18:22 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ ClapTrap::ClapTrap(std::string name) : name_(name)
 ClapTrap::ClapTrap(const ClapTrap &other)
 {
 	name_ = other.name_;
+	std::cout << "ClapTrap " << name_ << " constructor called" << std::endl;
 	hit_points_ = other.hit_points_;
 	energy_points_ = other.energy_points_;
 	attack_damage_ = other.attack_damage_;
