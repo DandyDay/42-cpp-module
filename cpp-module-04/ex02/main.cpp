@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 23:02:23 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/11/06 17:17:05 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:37:16 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 int main()
 {
-	Animal*	animals[10];
+	AAnimal*	animals[10];
 
 	for (int i = 0; i < 5; i++)
 		animals[i] = new Dog();
