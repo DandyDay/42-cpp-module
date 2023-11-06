@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 13:33:03 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/10/05 13:35:15 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:30:59 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ Brain::Brain()
 
 Brain::Brain(const Brain &other)
 {
+	std::cout << "Brain copy constructor called" << std::endl;
 	for (int i = 0; i < 100; i++)
 		ideas_[i] = other.ideas_[i];
 }
