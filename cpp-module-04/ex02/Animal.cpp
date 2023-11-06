@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 14:03:33 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/10/05 13:41:00 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:20:01 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ Animal::Animal()
 
 Animal::Animal(const Animal &other)
 {
+	std::cout << "Animal copy constructor called" << std::endl;
 	type_ = other.type_;
 }
 

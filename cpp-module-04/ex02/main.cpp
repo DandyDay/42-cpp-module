@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 23:02:23 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/10/05 13:41:32 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:17:05 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,16 @@
 
 int main()
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	// const Animal* k = new Animal();
-	delete j;//should not create a leak
-	delete i;
+	Animal*	animals[10];
+
+	for (int i = 0; i < 5; i++)
+		animals[i] = new Dog();
+	for (int i = 5; i < 10; i++)
+		animals[i] = new Cat();
+
+	std::cout << std::endl;
+	for (int i = 0; i < 10; i++)
+		delete animals[i];
 
 	// atexit(leakCheck);
 	return 0;
