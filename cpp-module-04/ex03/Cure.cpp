@@ -16,7 +16,7 @@
 
 Cure::Cure()
 {
-	type_ = "Cure";
+	type_ = "cure";
 }
 
 Cure::Cure(const Cure &other)

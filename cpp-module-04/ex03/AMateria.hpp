@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 13:52:07 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/10/05 16:47:50 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/11/11 15:35:13 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include "ICharacter.hpp"
 #include <string>
+
+class ICharacter;
 
 class AMateria
 {

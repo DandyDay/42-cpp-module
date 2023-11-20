@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 17:41:26 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/10/05 19:00:29 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/11/11 16:04:22 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,13 @@ Character::Character(std::string name)
 Character::Character(const Character &other)
 {
 	name_ = other.name_;
+	for (int i = 0; i < 4; i++)
+	{
+		if (other.materia_[i] != NULL)
+			materia_[i] = other.materia_[i]->clone();
+		else
+			materia_[i] = NULL;
+	}
 }
 
 Character &Character::operator=(const Character &other)
@@ -37,10 +44,9 @@ Character &Character::operator=(const Character &other)
 		for (int i = 0; i < 4; i++)
 		{
 			if (materia_[i] != NULL)
-			{
 				delete materia_[i];
-				materia_[i] = NULL;
-			}
+			if (other.materia_[i] != NULL)
+				materia_[i] = other.materia_[i]->clone();
 		}
 		name_ = other.name_;
 	}
@@ -68,7 +74,7 @@ void Character::equip(AMateria *m)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (materia_[i] != NULL)
+		if (materia_[i] == NULL)
 		{
 			materia_[i] = m;
 			break;
