@@ -6,11 +6,14 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 17:41:26 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/11/11 16:04:22 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/12/15 22:12:04 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
+#include "AMateria.hpp"
+#include "MateriaSource.hpp"
+#include <iostream>
 
 Character::Character()
 {
@@ -77,6 +80,7 @@ void Character::equip(AMateria *m)
 		if (materia_[i] == NULL)
 		{
 			materia_[i] = m;
+			m->setIsEquiped(true);
 			break;
 		}
 	}
@@ -84,6 +88,11 @@ void Character::equip(AMateria *m)
 
 void Character::unequip(int idx)
 {
+	if (materia_[idx] != NULL)
+	{
+		materia_[idx]->setIsEquiped(false);
+		materia_[idx]->getSource()->addToMyMateria(materia_[idx]);
+	}
 	materia_[idx] = NULL;
 }
 
@@ -91,4 +100,6 @@ void Character::use(int idx, ICharacter &target)
 {
 	if (materia_[idx] != NULL)
 		materia_[idx]->use(target);
+	else
+		std::cout << "No Materia Equipped on that Slot" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:42:00 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/10/05 17:20:08 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/12/15 21:41:57 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ Ice::Ice()
 	type_ = "ice";
 }
 
-Ice::Ice(const Ice &other)
+Ice::Ice(const Ice &other) : AMateria(other)
 {
-	type_ = other.type_;
 }
 
 Ice &Ice::operator=(const Ice &other)
@@ -29,6 +28,8 @@ Ice &Ice::operator=(const Ice &other)
 	if (this != &other)
 	{
 		type_ = other.type_;
+		isEquiped_ = false;
+		source_ = other.source_;
 	}
 	return *this;
 }

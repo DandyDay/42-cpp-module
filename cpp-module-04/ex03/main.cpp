@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 18:47:49 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/11/11 16:17:06 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/12/15 22:13:44 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,15 @@
 #include "Ice.hpp"
 #include "MateriaSource.hpp"
 
-void leak()
-{
-	system("leaks character");
-}
-
 int main()
 {
-	atexit(leak);
 	IMateriaSource *src = new MateriaSource();
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
+	Ice *theFirstIce = new Ice();
+	Cure *theFirstCure = new Cure();
+	src->learnMateria(theFirstIce);
+	src->learnMateria(theFirstCure);
+	delete theFirstIce;
+	delete theFirstCure;
 
 	ICharacter *me = new Character("me");
 
@@ -39,6 +37,7 @@ int main()
 
 	me->use(0, *bob);
 	me->use(1, *bob);
+	me->unequip(0);
 
 	delete bob;
 	delete me;

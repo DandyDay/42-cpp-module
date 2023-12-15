@@ -19,9 +19,8 @@ Cure::Cure()
 	type_ = "cure";
 }
 
-Cure::Cure(const Cure &other)
+Cure::Cure(const Cure &other) : AMateria(other)
 {
-	type_ = other.type_;
 }
 
 Cure &Cure::operator=(const Cure &other)
@@ -29,6 +28,8 @@ Cure &Cure::operator=(const Cure &other)
 	if (this != &other)
 	{
 		type_ = other.type_;
+		isEquiped_ = false;
+		source_ = other.source_;
 	}
 	return *this;
 }
