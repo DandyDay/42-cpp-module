@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 23:02:23 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/12/16 15:23:10 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/12/16 06:35:09 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 int main()
 {
-	Animal *animals[10];
+	AAnimal *animals[10];
 
 	for (int i = 0; i < 5; i++)
 		animals[i] = new Dog();
@@ -38,7 +38,7 @@ int main()
 	animals[0]->printBrain();
 	std::cout << std::endl;
 
-	Animal *copyAnimal = new Dog(*(Dog *)animals[0]);
+	AAnimal *copyAnimal = new Dog(*(Dog *)animals[0]);
 	copyAnimal->setBrain(1, "new second idea");
 
 	std::cout << std::endl;
