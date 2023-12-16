@@ -6,7 +6,7 @@
 #    By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/03 14:15:39 by jinhchoi          #+#    #+#              #
-#    Updated: 2023/10/01 14:36:51 by jinhchoi         ###   ########.fr        #
+#    Updated: 2023/12/16 15:48:59 by jinhchoi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 INCLUDE = .
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp
+SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 OBJS = ${SRCS:.cpp=.o}
 
 all : $(NAME)
