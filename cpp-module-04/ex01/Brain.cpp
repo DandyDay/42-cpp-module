@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 13:33:03 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/11/06 17:31:07 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/12/16 14:53:02 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,19 @@ Brain &Brain::operator=(const Brain &other)
 Brain::~Brain()
 {
 	std::cout << "Brain destructor called" << std::endl;
+}
+
+void Brain::printIdeas()
+{
+	for (int i = 0; i < 100; i++)
+	{
+		if (ideas_[i].length() != 0)
+			std::cout << "idea " << i << ": " << ideas_[i] << std::endl;
+	}
+}
+
+void Brain::setIdeas(int idx, std::string idea)
+{
+	if (0 <= idx && idx < 100)
+		ideas_[idx] = idea;
 }

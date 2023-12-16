@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 14:08:35 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/11/06 15:41:09 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/12/16 15:00:13 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,14 @@ Cat::~Cat()
 void Cat::makeSound() const
 {
 	std::cout << "meow.." << std::endl;
+}
+
+void Cat::printBrain()
+{
+	this->brain_->printIdeas();
+}
+
+void Cat::setBrain(int idx, std::string idea)
+{
+	this->brain_->setIdeas(idx, idea);
 }

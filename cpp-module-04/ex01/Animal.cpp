@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 14:03:33 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/11/06 15:37:53 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/12/16 15:12:23 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,16 @@ std::string Animal::getType() const
 void Animal::makeSound() const
 {
 	std::cout << "Ani,, Ani,," << std::endl;
+}
+
+void Animal::printBrain()
+{
+	std::cout << "Animal Class doesn't have brain" << std::endl;
+}
+
+void Animal::setBrain(int idx, std::string idea)
+{
+	std::cout << "Animal Class doesn't have brain" << std::endl;
+	std::cout << "Can't set idea[" << idx << "] to '" << idea << "'"
+			  << std::endl;
 }

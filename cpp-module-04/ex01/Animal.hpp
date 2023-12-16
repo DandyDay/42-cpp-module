@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 14:03:19 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/10/01 14:37:48 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/12/16 14:58:22 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ public:
 
 	std::string getType() const;
 	virtual void makeSound() const;
+	virtual void printBrain();
+	virtual void setBrain(int idx, std::string idea);
 
 protected:
 	std::string type_;

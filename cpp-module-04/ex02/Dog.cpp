@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 14:08:35 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/11/06 15:41:22 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/12/16 15:00:36 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,14 @@ Dog::~Dog()
 void Dog::makeSound() const
 {
 	std::cout << "bow-wow.." << std::endl;
+}
+
+void Dog::printBrain()
+{
+	this->brain_->printIdeas();
+}
+
+void Dog::setBrain(int idx, std::string idea)
+{
+	this->brain_->setIdeas(idx, idea);
 }

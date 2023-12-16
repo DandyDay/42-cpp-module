@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 14:08:40 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/10/05 00:08:31 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/12/16 14:58:08 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,11 @@ public:
 	virtual ~Dog();
 
 	void makeSound() const;
+	void printBrain();
+	void setBrain(int idx, std::string idea);
 
 private:
-	Brain* brain_;
+	Brain *brain_;
 };
 
 #endif
