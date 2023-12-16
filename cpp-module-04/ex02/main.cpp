@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 23:02:23 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/12/16 06:35:09 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/12/16 19:52:28 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,20 +38,19 @@ int main()
 	animals[0]->printBrain();
 	std::cout << std::endl;
 
-	AAnimal *copyAnimal = new Dog(*(Dog *)animals[0]);
-	copyAnimal->setBrain(1, "new second idea");
+	Dog copyAnimal = *((Dog *)animals[0]);
+	copyAnimal.setBrain(1, "new second idea");
 
 	std::cout << std::endl;
 	std::cout << "animals[0]'s idea" << std::endl;
 	animals[0]->printBrain();
 	std::cout << std::endl;
 	std::cout << "copyAnimal's idea" << std::endl;
-	copyAnimal->printBrain();
+	copyAnimal.printBrain();
 	std::cout << std::endl;
 
 	for (int i = 0; i < 10; i++)
 		delete animals[i];
-	delete copyAnimal;
 	// atexit(leakCheck);
 	return 0;
 }

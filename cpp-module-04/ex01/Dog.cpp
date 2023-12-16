@@ -6,7 +6,7 @@
 /*   By: jinhchoi <jinhchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 14:08:35 by jinhchoi          #+#    #+#             */
-/*   Updated: 2023/12/16 15:00:36 by jinhchoi         ###   ########.fr       */
+/*   Updated: 2023/12/16 19:48:26 by jinhchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Dog &Dog::operator=(const Dog &other)
 		type_ = other.type_;
 		if (this->brain_)
 			delete this->brain_;
-		brain_ = other.brain_;
+		brain_ = new Brain(*other.brain_);
 	}
 	return *this;
 }
