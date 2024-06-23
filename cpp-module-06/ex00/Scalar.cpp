@@ -79,7 +79,7 @@ bool Scalar::parseInt(std::string &literal)
 
 bool Scalar::parseFloat(std::string &literal)
 {
-	if (literal.back() != 'f')
+	if (literal[literal.size() - 1] != 'f')
 		return false;
 	std::stringstream ss(literal.substr(0, literal.size() - 1));
 	float f;
