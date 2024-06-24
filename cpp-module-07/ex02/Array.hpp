@@ -35,7 +35,8 @@ public:
 		if (idx >= len)
 			throw std::out_of_range("index out of range");
 		else
-			return arr[idx]; }
+			return arr[idx];
+	}
 	unsigned int size() { return len; }
 private:
 	T *arr;
