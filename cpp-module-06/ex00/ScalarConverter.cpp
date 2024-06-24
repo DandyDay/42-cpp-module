@@ -1,6 +1,6 @@
 #include "ScalarConverter.hpp"
 #include "utils.hpp"
-#include <cmath>
+#include <math.h>
 #include <limits>
 #include <iomanip>
 #include <iostream>
@@ -36,12 +36,14 @@ void ScalarConverter::convert(std::string &literal)
 		if (integer > 0)
 			std::cout << std::setprecision(integer);
 		if (s.getValue().f > std::numeric_limits<char>::max() ||
-			s.getValue().f < std::numeric_limits<char>::min())
+			s.getValue().f < std::numeric_limits<char>::min() ||
+			isnan(s.getValue().f) || isinf(s.getValue().f))
 			printScalar(static_cast<char>(s.getValue().f), false);
 		else
 			printScalar(static_cast<char>(s.getValue().f), true);
 		if (s.getValue().f > std::numeric_limits<int>::max() ||
-			s.getValue().f < std::numeric_limits<int>::min())
+			s.getValue().f < std::numeric_limits<int>::min() ||
+			isnan(s.getValue().f) || isinf(s.getValue().f))
 			printScalar(static_cast<int>(s.getValue().f), false);
 		else
 			printScalar(static_cast<int>(s.getValue().f), true);
@@ -54,12 +56,14 @@ void ScalarConverter::convert(std::string &literal)
 		if (integer > 0)
 			std::cout << std::setprecision(integer);
 		if (s.getValue().d > std::numeric_limits<char>::max() ||
-			s.getValue().d < std::numeric_limits<char>::min())
+			s.getValue().d < std::numeric_limits<char>::min() ||
+			isnan(s.getValue().d) || isinf(s.getValue().d))
 			printScalar(static_cast<char>(s.getValue().d), false);
 		else
 			printScalar(static_cast<char>(s.getValue().d), true);
 		if (s.getValue().d > std::numeric_limits<int>::max() ||
-			s.getValue().d < std::numeric_limits<int>::min())
+			s.getValue().d < std::numeric_limits<int>::min() ||
+			isnan(s.getValue().d) || isinf(s.getValue().d))
 			printScalar(static_cast<int>(s.getValue().d), false);
 		else
 			printScalar(static_cast<int>(s.getValue().d), true);

@@ -1,6 +1,7 @@
 #include "Scalar.hpp"
 #include <iostream>
 #include <sstream>
+#include <limits>
 
 Scalar::Scalar(std::string &literal)
 {
@@ -81,6 +82,24 @@ bool Scalar::parseFloat(std::string &literal)
 {
 	if (literal[literal.size() - 1] != 'f')
 		return false;
+	if (literal.compare("nanf") == 0 || literal.compare("+nanf") == 0 || literal.compare("-nanf") == 0)
+	{
+		this->value.f = std::numeric_limits<float>::quiet_NaN();
+		this->type = FLOAT;
+		return true;
+	}
+	else if (literal.compare("inff") == 0 || literal.compare("+inff") == 0)
+	{
+		this->value.f = std::numeric_limits<float>::infinity();
+		this->type = FLOAT;
+		return true;
+	}
+	else if (literal.compare("-inff") == 0)
+	{
+		this->value.f = -std::numeric_limits<float>::infinity();
+		this->type = FLOAT;
+		return true;
+	}
 	std::stringstream ss(literal.substr(0, literal.size() - 1));
 	float f;
 	ss >> f;
@@ -96,6 +115,24 @@ bool Scalar::parseFloat(std::string &literal)
 
 bool Scalar::parseDouble(std::string &literal)
 {
+	if (literal.compare("nan") == 0 || literal.compare("+nan") == 0 || literal.compare("-nan") == 0)
+	{
+		this->value.d = std::numeric_limits<double>::quiet_NaN();
+		this->type = DOUBLE;
+		return true;
+	}
+	else if (literal.compare("inf") == 0 || literal.compare("+inf") == 0)
+	{
+		this->value.d = std::numeric_limits<double>::infinity();
+		this->type = DOUBLE;
+		return true;
+	}
+	else if (literal.compare("-inf") == 0)
+	{
+		this->value.d = -std::numeric_limits<double>::infinity();
+		this->type = DOUBLE;
+		return true;
+	}
 	std::stringstream ss(literal);
 	double d;
 	ss >> d;
