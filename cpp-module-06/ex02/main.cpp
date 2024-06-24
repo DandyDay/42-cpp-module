@@ -3,11 +3,12 @@
 
 int main()
 {
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 5; i++)
 	{
 		Base *base = generate();
 		identify(base);
 		identify(*base);
+		std::cout << std::endl;
 	}
 	return 0;
 }

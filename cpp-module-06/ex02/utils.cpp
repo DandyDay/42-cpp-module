@@ -2,10 +2,21 @@
 #include <cstdlib>
 #include <iostream>
 
+unsigned int myrand(long seedin)
+{
+	static long seed = 0;
+	if (seed == 0)
+		seed = seedin;
+	const unsigned int a = 1664525;
+    const unsigned int c = 1013904223;
+	seed = a * seed + c;
+    return seed;
+}
+
+
 Base *generate(void)
 {
-	srand(time(NULL));
-	int num = rand();
+	int num = myrand(time(NULL));
 	if (num % 3 == 0)
 	{
 		A *a = new A();
