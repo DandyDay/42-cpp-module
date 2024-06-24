@@ -32,5 +32,6 @@ int main()
 	std::cout << "\tc: " << data2->c << std::endl;
 	std::cout << std::endl;
 
+	delete data;
 	return 0;
 }
