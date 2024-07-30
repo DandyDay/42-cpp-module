@@ -36,18 +36,18 @@ void Span::addNumber(int n)
 		throw std::invalid_argument("duplicated element inserted!");
 }
 
-int Span::shortestSpan()
+unsigned int Span::shortestSpan()
 {
 	if (s.size() <= 1)
 		throw std::length_error("too few arguemnts!");
 	else
 	{
-		int min = 2147483647;
+		unsigned int min = (unsigned int)-1;
 		std::set<int>::iterator it = s.begin();
 		int prevVal = *(it++);
 		for (; it != s.end(); it++)
 		{
-			if (min > *it - prevVal)
+			if (min > (unsigned int)(*it - prevVal))
 				min = *it - prevVal;
 			prevVal = *it;
 		}
@@ -55,7 +55,7 @@ int Span::shortestSpan()
 	}
 }
 
-int Span::longestSpan()
+unsigned int Span::longestSpan()
 {
 	if (s.size() <= 1)
 		throw std::length_error("too few arguemnts!");

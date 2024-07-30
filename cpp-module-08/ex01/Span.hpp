@@ -13,8 +13,8 @@ public:
 	~Span();
 
 	void addNumber(int n);
-	int shortestSpan();
-	int longestSpan();
+	unsigned int shortestSpan();
+	unsigned int longestSpan();
 
 	template <typename Iterator> void addNumbers(Iterator begin, Iterator end)
 	{
