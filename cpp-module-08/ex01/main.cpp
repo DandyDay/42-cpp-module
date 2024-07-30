@@ -1,9 +1,9 @@
+#include "Span.hpp"
+#include <deque>
 #include <iostream>
 #include <string>
-#include <deque>
-#include "Span.hpp"
 
-int main( void )
+int main(void)
 {
 	{
 		std::cout << "TEST 1 - basic test" << std::endl;
@@ -29,7 +29,8 @@ int main( void )
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
 	}
-	try {
+	try
+	{
 		std::cout << "\nTEST 3 - span overflow test" << std::endl;
 		Span sp = Span(5);
 		sp.addNumber(6);
@@ -43,7 +44,8 @@ int main( void )
 	{
 		std::cout << e.what() << std::endl;
 	}
-	try {
+	try
+	{
 		std::cout << "\nTEST 4 - few arguments test" << std::endl;
 		Span sp = Span(5);
 		sp.addNumber(6);

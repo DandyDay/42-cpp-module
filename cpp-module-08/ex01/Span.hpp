@@ -1,7 +1,8 @@
 #ifndef SPAN_HPP
 #define SPAN_HPP
 
-#include <vector>
+#include <set>
+#include <stdexcept>
 
 class Span
 {
@@ -12,24 +13,24 @@ public:
 	~Span();
 
 	void addNumber(int n);
-	unsigned int shortestSpan();
-	unsigned int longestSpan();
+	int shortestSpan();
+	int longestSpan();
 
 	template <typename Iterator> void addNumbers(Iterator begin, Iterator end)
 	{
 		if (end - begin < 0)
 			throw std::invalid_argument("invalid argument");
-		else if (end - begin + v.size() > maxSize)
+		else if (end - begin + s.size() > maxSize)
 			throw std::length_error("max size exceeded!");
 		else
-			v.insert(v.begin(), begin, end);
+			s.insert(begin, end);
 	}
 
 private:
 	Span();
 
-	std::vector<int> v;
 	unsigned int maxSize;
+	std::set<int> s;
 };
 
 #endif
