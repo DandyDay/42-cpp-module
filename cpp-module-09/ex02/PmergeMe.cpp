@@ -36,6 +36,13 @@ PmergeMe &PmergeMe::operator=(const PmergeMe &other)
 
 PmergeMe::~PmergeMe()
 {
+	for (size_t i = 0; i < numVector.size(); i++)
+		delete numVector[i];
+	numVector.clear();
+	for (size_t i = 0; i < numDeque.size(); i++)
+		delete numDeque[i];
+	numDeque.clear();
+	values.clear();
 }
 
 int PmergeMe::stoi(std::string &str)
@@ -136,6 +143,9 @@ void PmergeMe::sort(std::vector<Pair *> &vec)
 	for (int i = first; i >= last; i--)
 		binaryInsert(mainChain, first + last + 1, pairList[i]->small);
 
+	for (size_t i = 0 ; i < pairList.size(); i++)
+		delete pairList[i];
+
 	vec = mainChain;
 }
 
@@ -192,6 +202,9 @@ void PmergeMe::sort(std::deque<Pair *> &deq)
 	last = jacobsthalNumbers[jIdx - 1];
 	for (int i = first; i >= last; i--)
 		binaryInsert(mainChain, first + last + 1, pairList[i]->small);
+
+	for (size_t i = 0 ; i < pairList.size(); i++)
+		delete pairList[i];
 
 	deq = mainChain;
 }
