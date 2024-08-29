@@ -20,16 +20,17 @@ PmergeMe::PmergeMe(int argc, char **argv)
 		values.push_back(PmergeMe::stoi(argv[i]));
 }
 
-PmergeMe::PmergeMe(const PmergeMe &other)
+PmergeMe::PmergeMe(const PmergeMe &other) : values(other.values)
 {
-	(void)other;
 }
 
 PmergeMe &PmergeMe::operator=(const PmergeMe &other)
 {
-	(void)other;
 	if (this != &other)
 	{
+		values.clear();
+		for (size_t i = 0; i < other.values.size(); i++)
+			values.push_back(other.values[i]);
 	}
 	return *this;
 }
@@ -259,7 +260,7 @@ void PmergeMe::binaryInsert(std::deque<Pair *> &deq, size_t len, Pair *val)
 	deq.insert(deq.begin() + start, val);
 }
 
-void PmergeMe::printResult()
+void PmergeMe::analyze()
 {
 	measureSortingByVector();
 	measureSortingByDeque();
@@ -276,6 +277,14 @@ void PmergeMe::printResult()
 
 	std::cout << "Time to process a range of " << values.size() << " elements with std::vector : " << timeVector << " ms" << std::endl;
 	std::cout << "Time to process a range of " << values.size() << " elements with std::deque :  " << timeDeque << " ms" << std::endl;
+
+	for (size_t i = 0; i < numVector.size(); i++)
+		delete numVector[i];
+	numVector.clear();
+	for (size_t i = 0; i < numDeque.size(); i++)
+		delete numDeque[i];
+	numDeque.clear();
+	values.clear();
 }
 
 PmergeMe::Pair::Pair()
@@ -309,7 +318,6 @@ PmergeMe::Pair::~Pair()
 
 std::ostream &operator<<(std::ostream &os, PmergeMe::Pair &p)
 {
-	// TODO: insert return statement here
 	if (p.big == NULL && p.small == NULL)
 		os << p.max;
 	else

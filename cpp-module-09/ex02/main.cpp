@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 			return 1;
 		}
 		PmergeMe pmergeMe(argc, argv);
-		pmergeMe.printResult();
+		pmergeMe.analyze();
 	}
 	catch (std::exception &e)
 	{

@@ -26,7 +26,7 @@ public:
 	PmergeMe &operator=(const PmergeMe &other);
 	~PmergeMe();
 
-	void printResult();
+	void analyze();
 
 private:
 	PmergeMe();
