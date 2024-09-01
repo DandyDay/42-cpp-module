@@ -1,4 +1,5 @@
 #include "BitcoinExchange.hpp"
+#include <cstdlib>
 #include <fstream>
 #include <iostream>
 #include <sstream>
@@ -9,7 +10,7 @@ BitcoinExchange::BitcoinExchange()
 
 BitcoinExchange::BitcoinExchange(const std::string &filename)
 {
-	std::ifstream ifs(filename);
+	std::ifstream ifs(filename.c_str());
 	if (ifs.fail())
 		throw databaseException("could not open data.csv");
 
@@ -28,7 +29,7 @@ BitcoinExchange::BitcoinExchange(const std::string &filename)
 		std::getline(ifs, exchangeRateBuffer);
 		if (!ifs.eof() && (ifs.bad() || ifs.fail()))
 			throw databaseException("database exception");
-		exchangeRate = std::atof(exchangeRateBuffer.c_str());
+		exchangeRate = atof(exchangeRateBuffer.c_str());
 		if (!isValidDate(dateBuffer) || exchangeRate < 0)
 			throw databaseException("wrong data format");
 		priceChart.insert(std::make_pair(dateBuffer, exchangeRate));
@@ -74,7 +75,7 @@ void BitcoinExchange::printPriceChart()
 
 void BitcoinExchange::evaluatePrices(const std::string &filename)
 {
-	std::ifstream ifs(filename);
+	std::ifstream ifs(filename.c_str());
 	if (ifs.fail())
 		return; // error
 	std::string lineBuffer;
