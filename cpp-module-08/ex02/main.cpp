@@ -36,12 +36,12 @@ int main()
 		++rit;
 	}
 
-	std::cout << "TEST 2 - const iterator test" << std::endl;
-	MutantStack<const int> cstack;
+	std::cout << "TEST 3 - const iterator test" << std::endl;
+	MutantStack<int> cstack;
 	for (int i = 0; i < 10; i++)
 		cstack.push(i);
-	MutantStack<int>::const_iterator cit = mstack.begin();
-	MutantStack<int>::const_iterator cite = mstack.end();
+	MutantStack<int>::const_iterator cit = cstack.begin();
+	MutantStack<int>::const_iterator cite = cstack.end();
 	std::cout << "stack const iterator" << std::endl;
 	while (cit != cite)
 	{
