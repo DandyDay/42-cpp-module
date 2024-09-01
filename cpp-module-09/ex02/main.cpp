@@ -2,14 +2,9 @@
 #include <iostream>
 #include <vector>
 
-void leak()
-{
-	system("leaks PmergeMe");
-}
 
 int main(int argc, char **argv)
 {
-	atexit(leak);
 	try
 	{
 		if (argc < 2)
