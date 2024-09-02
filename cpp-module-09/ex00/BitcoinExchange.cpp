@@ -23,11 +23,12 @@ BitcoinExchange::BitcoinExchange(const std::string &filename)
 
 	while (std::getline(ifs, buffer))
 	{
+		std::stringstream ss(buffer);
 		std::string dateBuffer;
 		std::string exchangeRateBuffer;
-		std::getline(ifs, dateBuffer, ',');
-		std::getline(ifs, exchangeRateBuffer);
-		if (!ifs.eof() && (ifs.bad() || ifs.fail()))
+		std::getline(ss, dateBuffer, ',');
+		std::getline(ss, exchangeRateBuffer);
+		if (!ss.eof() && (ss.bad() || ss.fail()))
 			throw databaseException("database exception");
 		exchangeRate = atof(exchangeRateBuffer.c_str());
 		if (!isValidDate(dateBuffer) || exchangeRate < 0)
